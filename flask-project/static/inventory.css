@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    counter-reset: Serial;  
+    
+}
+
+h2 {
+    color: #007bff;
+}
+
+table {
+    width: 80%;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+    border-collapse: collapse;
+    width: 90%;
+    padding-left: 20px;
+    
+    
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+tr td:first-child:before
+{
+  counter-increment: Serial;      
+  content:  counter(Serial); 
+}
+
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+tbody tr {
+    animation: fadeIn 0.5s ease-in-out;
+}
+.bach-home{
+padding: 30px;
+text-decoration: none;
+font-size: x-large;
+    
+}
+.homeButt{
+    position: absolute;
+    left: 40px;
+    top: 100px;
+    
+}
+

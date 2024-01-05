@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="/static/admin.css">
+    <link rel="stylesheet" href="/static/admin-darkmod.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJopGo7S+54NQ6meP1C2AC7F8gI5FbX" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   
+</head>
+<body>
+  <div class="area"></div><nav class="main-menu">
+    <ul>
+        <li>
+            <a href="#">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                   Home
+                </span>
+            </a>
+          
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fa fa-book fa-2x"></i> 
+                <span class="nav-text">
+                  <button id="productButton" class="btn  transparent-button">Products</button>
+                </span>
+            </a>
+        </li>
+        
+
+       
+        <li class="has-subnav">
+            <a href="#">
+                <i class="fa fa-globe fa-2x"></i>
+                <span class="nav-text">
+                  <button id="inventoryButton" class="btn  transparent-button">Inventory</button>
+                </span>
+            </a>
+            
+        </li>
+       
+
+    <ul class="logout">
+        <li>
+           <a href="#">
+                 <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                  <button id="logoutButton" class="btn  transparent-button">Logout</button>
+                </span>
+            </a>
+        </li>  
+    </ul>
+
+   
+    
+</nav>
+
+<!-- _________--------dashbord--------________- -->
+
+  <center>
+
+<div class=" d-flex justify-content-center dashBord pt-5 "> <h3>Dashbord</h3>  <p class="m-2">Control panel</p></div>
+
+<div class="m-4 d-flex ms-5 mainDiv"  >
+  <div class="card  m-4 d-flex"  style="width: 18rem;">
+      <div class="card-body card-div">
+        <img src="https://booster.io/wp-content/uploads/product-add-to-cart-e1438362099361.png" class="cardImg" alt="">
+        <h2 class="text-start d-flex"> {{ total_products }}</h2>
+        <h5 class="card-subtitle mb-2 text-muted text-start">Add products</h5>
+        <p class="card-text"></p>
+        <div class="fs-4 "> <button class="rounded shadow p-1 mb-2 bg-body rounded border-1"><a href="{{ url_for('product') }}" class="card-link text-decoration-none text-primary ">more info </a></button></div>
+        
+       
+       
+      </div>
+    </div>
+
+    <div class="card m-4 "  style="width: 18rem;">
+      <div class="card-body card-div ">
+        <img src="https://static.vecteezy.com/system/resources/previews/015/131/905/original/flat-cartoon-style-shop-facade-front-view-modern-flat-storefront-or-supermarket-design-png.png" class="cardImg" alt="">
+        <h2 class="text-start">{{ products_in_shop }}</h2>
+        <h5 class="card-subtitle mb-2 text-muted ">Total products in shop</h5>
+        <p class="card-text"></p>
+        <div class="fs-4 "> <button class="rounded shadow p-1 mb-2 bg-body rounded border-1"> <a href="{{ url_for('shop') }}"  class="card-link text-decoration-none text-primary ">more info </a></button></div>
+       
+       
+      </div>
+      
+    </div>
+
+
+    <div class="card m-4 "  style="width: 18rem;">
+      <div class="card-body card-div">
+        <img src="https://img.freepik.com/premium-vector/warehouse-industry-with-storage-buildings-forklift-rack-with-boxes_441769-47.jpg?w=900" class="cardImg" alt="">
+        <h2 class="text-start">{{ products_in_warehouse }}</h2>
+        <h5 class="card-subtitle mb-2 text-muted text-start">Total products in <span>warehouse</span></h5>
+        <p class="card-text"></p>
+        <div class="fs-4 "> <button class="rounded shadow p-1 mb-2 bg-body rounded border-1"><a href="{{ url_for('warehouse') }}"  class="card-link text-decoration-none text-primary ">more info </a></button></div>
+       
+       
+      </div>
+    </div>
+
+    
+    <div class="card m-4 "  style="width: 18rem;">
+      <div class="card-body card-div ">
+        <img src="https://static.vecteezy.com/system/resources/previews/015/131/905/original/flat-cartoon-style-shop-facade-front-view-modern-flat-storefront-or-supermarket-design-png.png" class="cardImg" alt="">
+        <h2 class="text-start">{{ products_in_shop2 }}</h2>
+        <h5 class="card-subtitle mb-2 text-muted ">Total products in shop 2</h5>
+        <p class="card-text"></p>
+        <div class="fs-4 "> <button class="rounded shadow p-1 mb-2 bg-body rounded border-1"> <a href="{{ url_for('shop2') }}"  class="card-link text-decoration-none text-primary ">more info </a></button></div>
+       
+       
+      </div>
+      
+    </div>
+
+
+<div class="theme-container shadow-dark">
+  <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+</div>
+
+</center>
+<script>
+ document.body.style = "background-color: var(--bs-dark);transition: 0.5s;"
+const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+
+var theme = "dark";
+const root = document.querySelector(":root");
+const container = document.getElementsByClassName("theme-container")[0];
+const themeIcon = document.getElementById("theme-icon");
+container.addEventListener("click", setTheme);
+
+function setTheme() {
+    switch (theme) {
+        case "dark":
+            setLight();
+            theme = "light";
+            break;
+        case "light":
+            setDark();
+            theme = "dark";
+            break;
+    }
+}
+
+function setLight() {
+    root.style.setProperty(
+        "--bs-dark",
+        "linear-gradient(318.32deg, #c3d1e4 0%, #dde7f3 55%, #d4e0ed 100%)"
+    );
+    container.classList.remove("shadow-dark");
+    setTimeout(() => {
+        container.classList.add("shadow-light");
+        themeIcon.classList.remove("change");
+    }, 300);
+    themeIcon.classList.add("change");
+    themeIcon.src = sun;
+}
+
+function setDark() {
+    root.style.setProperty("--bs-dark", "#212529");
+    container.classList.remove("shadow-light");
+    setTimeout(() => {
+        container.classList.add("shadow-dark");
+        themeIcon.classList.remove("change");
+    }, 300);
+    themeIcon.classList.add("change");
+    themeIcon.src = moon;
+}
+   document.getElementById("logoutButton").addEventListener("click", function() {
+        window.location.href = "{{ url_for('loginPage') }}";
+    });
+    document.getElementById("productButton").addEventListener("click", function() {
+        window.location.href = "{{ url_for('details') }}";
+    });
+    
+    document.getElementById("inventoryButton").addEventListener("click", function() {
+        window.location.href = "{{ url_for('inventory') }}";
+    });
+    
+</script>
+
+</body>
+</html>
+
